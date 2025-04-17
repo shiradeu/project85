@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo
 from flask_session import Session
 import os
 from werkzeug.utils import secure_filename
+from alg_runner import AlgRunner
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/research-db"
@@ -33,6 +34,7 @@ def save_file(file):
 @app.route("/api/research", methods=["POST"])
 def create_research():
     try:
+        AlgRunner().runner()
         file1 = request.files.get("file1")
         file2 = request.files.get("file2")
         
