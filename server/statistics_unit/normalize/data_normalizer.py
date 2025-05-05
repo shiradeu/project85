@@ -1,5 +1,5 @@
 import json
-from normalize.base_normalizer import BaseNormalizer  # מחלקת הנרמול היחידה
+from normalize.base_normalizer import BaseNormalizer
 
 class DataNormalizer:
     def __init__(self, df, config_file):
@@ -8,17 +8,29 @@ class DataNormalizer:
 
     def runner(self):
         df_copy = self.df.copy()
+
+        # טען את הקונפיגורציה
         with open(self.config_file, 'r') as f:
             config = json.load(f)
-            for col in df_copy.columns:
+
+        for col in df_copy.columns:
+            try:
                 if any(key in col for key in config):
                     col_type = next((key for key in config if key in col), None)
                     params = config[col_type]
                     min_val = params["min"]
                     max_val = params["max"]
-                    normalizer = BaseNormalizer(min_val, max_val)
-                    df_copy[col] = normalizer.normalize(df_copy[col])
-                    print(f"Normalized '{col}' using min={min_val}, max={max_val}.")
+                    print(f"Normalized '{col}' using config: min={min_val}, max={max_val}.")
                 else:
-                    print(f"No normalizer configured for column '{col}'.")
+                    # נרמול אוטומטי לפי ערכי המידע
+                    min_val = df_copy[col].min()
+                    max_val = df_copy[col].max()
+                    print(f"Auto-normalized '{col}' using data range: min={min_val}, max={max_val}.")
+
+                normalizer = BaseNormalizer(min_val, max_val)
+                df_copy[col] = normalizer.normalize(df_copy[col])
+
+            except Exception as e:
+                print(f"Failed to normalize column '{col}': {e}")
+
         return df_copy
