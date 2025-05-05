@@ -1,0 +1,150 @@
+{
+  "hdl": {
+    "min": 20,
+    "max": 100
+  },
+  "ldl": {
+    "min": 50,
+    "max": 200
+  },
+  "triglycerides": {
+    "min": 50,
+    "max": 250
+  },
+  "glucose_fasting": {
+    "min": 70,
+    "max": 125
+  },
+  "hba1c": {
+    "min": 4.0,
+    "max": 10.0
+  },
+  "creatinine": {
+    "min": 0.6,
+    "max": 1.5
+  },
+  "systolic_bp": {
+    "min": 90,
+    "max": 180
+  },
+  "diastolic_bp": {
+    "min": 60,
+    "max": 120
+  },
+  "bmi": {
+    "min": 15,
+    "max": 40
+  },
+  "wbc": {
+    "min": 4.0,
+    "max": 11.0
+  },
+  "rbc": {
+    "min": 4.5,
+    "max": 6.0
+  },
+  "sodium": {
+    "min": 135,
+    "max": 145
+  },
+  "potassium": {
+    "min": 3.5,
+    "max": 5.5
+  },
+  "is_smoker": {
+    "min": 0,
+    "max": 1
+  },
+  "hemoglobin": {
+    "min": 11.0,
+    "max": 18.0
+  },
+  "hematocrit": {
+    "min": 34.0,
+    "max": 54.0
+  },
+  "platelets": {
+    "min": 150,
+    "max": 450
+  },
+  "mcv": {
+    "min": 75,
+    "max": 100
+  },
+  "mch": {
+    "min": 25,
+    "max": 35
+  },
+  "mchc": {
+    "min": 30,
+    "max": 36
+  },
+  "bun": {
+    "min": 7,
+    "max": 25
+  },
+  "egfr": {
+    "min": 60,
+    "max": 120
+  },
+  "uric_acid": {
+    "min": 3.0,
+    "max": 8.0
+  },
+  "alt": {
+    "min": 0,
+    "max": 55
+  },
+  "ast": {
+    "min": 0,
+    "max": 40
+  },
+  "alp": {
+    "min": 30,
+    "max": 130
+  },
+  "bilirubin": {
+    "min": 0.2,
+    "max": 1.2
+  },
+  "albumin": {
+    "min": 3.5,
+    "max": 5.5
+  },
+  "calcium": {
+    "min": 8.5,
+    "max": 10.5
+  },
+  "phosphorus": {
+    "min": 2.5,
+    "max": 4.5
+  },
+  "magnesium": {
+    "min": 1.5,
+    "max": 2.5
+  },
+  "chloride": {
+    "min": 95,
+    "max": 105
+  },
+  "crp": {
+    "min": 0.0,
+    "max": 5.0
+  },
+  "esr": {
+    "min": 0,
+    "max": 30
+  },
+  "tsh": {
+    "min": 0.4,
+    "max": 4.0
+  },
+  "t4": {
+    "min": 0.8,
+    "max": 2.0
+  },
+  "insulin": {
+    "min": 2.0,
+    "max": 25.0
+  }
+}
