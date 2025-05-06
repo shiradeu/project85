@@ -9,7 +9,6 @@ class DataNormalizer:
     def runner(self):
         df_copy = self.df.copy()
 
-        # טען את הקונפיגורציה
         with open(self.config_file, 'r') as f:
             config = json.load(f)
 
@@ -20,12 +19,9 @@ class DataNormalizer:
                     params = config[col_type]
                     min_val = params["min"]
                     max_val = params["max"]
-                    print(f"Normalized '{col}' using config: min={min_val}, max={max_val}.")
                 else:
-                    # נרמול אוטומטי לפי ערכי המידע
                     min_val = df_copy[col].min()
                     max_val = df_copy[col].max()
-                    print(f"Auto-normalized '{col}' using data range: min={min_val}, max={max_val}.")
 
                 normalizer = BaseNormalizer(min_val, max_val)
                 df_copy[col] = normalizer.normalize(df_copy[col])
